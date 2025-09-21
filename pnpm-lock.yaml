@@ -26,6 +26,10 @@ importers:
       vue:
         specifier: ^3.5.21
         version: 3.5.21(typescript@5.9.2)
+    devDependencies:
+      playwright-chromium:
+        specifier: ^1.55.0
+        version: 1.55.0
 
   slides/trocco-is-here:
     dependencies:
