@@ -21,13 +21,31 @@ This is a presentation repository using Slidev for creating developer-focused sl
 
 ## Development Commands
 
-### For individual presentations (run from presentation directory):
+This repository uses pnpm workspaces for managing multiple presentations.
+
+### Root-level commands (recommended):
+```bash
+pnpm install      # Install dependencies for all workspaces
+pnpm dev          # Start dev server for default presentation
+pnpm build        # Build default presentation
+pnpm export       # Export default presentation
+pnpm build:all    # Build all presentations and aggregate to dist/
+pnpm export:all   # Export all presentations
+pnpm aggregate    # Aggregate existing builds to dist/ (without rebuilding)
+```
+
+### For individual presentations (alternative approach):
 ```bash
 cd slides/[presentation-name]
-pnpm install
 pnpm dev          # Start development server on localhost:3030
 pnpm build        # Build static files for production
 pnpm export       # Export to PDF/other formats
+```
+
+### Workspace-specific commands:
+```bash
+pnpm --filter [presentation-name] [command]  # Run command in specific workspace
+pnpm -r [command]                            # Run command in all workspaces
 ```
 
 ### Key Files in Each Presentation

@@ -1,16 +1,33 @@
 {
-  "name": "talks",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "packageManager": "pnpm@10.17.0",
-  "volta": {
-    "node": "22.19.0"
-  }
+	"name": "talks",
+	"version": "1.0.0",
+	"description": "Presentation slides repository using Slidev",
+	"private": true,
+	"scripts": {
+		"dev": "deno run --allow-read --allow-run scripts/select-presentation.ts dev",
+		"build": "deno run --allow-read --allow-run scripts/select-presentation.ts build",
+		"export": "deno run --allow-read --allow-run scripts/select-presentation.ts export",
+		"build:all": "pnpm -r build && deno run --allow-read --allow-write scripts/aggregate-builds.ts",
+		"export:all": "pnpm -r export",
+		"aggregate": "deno run --allow-read --allow-write scripts/aggregate-builds.ts",
+		"lint": "biome lint .",
+		"lint:fix": "biome lint --fix .",
+		"format": "biome format --write .",
+		"check": "biome check .",
+		"check:fix": "biome check --fix ."
+	},
+	"keywords": [
+		"slidev",
+		"presentations",
+		"talks"
+	],
+	"author": "",
+	"license": "ISC",
+	"packageManager": "pnpm@10.17.0",
+	"volta": {
+		"node": "22.19.0"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "2.2.4"
+	}
 }
